@@ -15,6 +15,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("This is me")
         
         if NSUserDefaults.standardUserDefaults().objectForKey("todolist") != nil {
             
