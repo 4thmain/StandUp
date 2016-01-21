@@ -8,6 +8,8 @@
 
 import UIKit
 
+let blue:UIColor! = UIColor(red: 41.0/255, green: 171.0/255, blue: 226.0/255, alpha: 1.0)
+
 class ViewController: UIViewController {
     @IBOutlet weak var TaskInput: UITextField!
 
@@ -21,7 +23,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
     }
 
     override func didReceiveMemoryWarning() {

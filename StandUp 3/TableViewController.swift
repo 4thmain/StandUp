@@ -79,7 +79,7 @@ class TableViewController: UITableViewController {
             tableView.reloadData()
         }
     
-        doneAction.backgroundColor = UIColor(red: 41.0/255, green: 171.0/255, blue: 226.0/255, alpha: 1.0)
+        doneAction.backgroundColor = blue
         return[deleteAction,doneAction]
 
     }
