@@ -52,6 +52,20 @@ class DoneTableViewController: UITableViewController {
         return doneCell
     }
     
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let archiveAction = UITableViewRowAction(style: .Normal, title: "Archive") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+            
+            let currenttodo = done[indexPath.row]
+            
+            done.removeAtIndex(indexPath.row)
+            NSUserDefaults.standardUserDefaults().setObject(done, forKey: "done")
+            todolist.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+        return[archiveAction]
+    }
+    
 
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
