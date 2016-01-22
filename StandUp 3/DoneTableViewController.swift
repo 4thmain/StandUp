@@ -57,13 +57,19 @@ class DoneTableViewController: UITableViewController {
         let archiveAction = UITableViewRowAction(style: .Normal, title: "Archive") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
             
             let currenttodo = done[indexPath.row]
+
+            if  currenttodo != " " {
+                
+                done.removeAtIndex(indexPath.row)
+                NSUserDefaults.standardUserDefaults().setObject(done, forKey: "done")
+                tableView.reloadData()
             
-            done.removeAtIndex(indexPath.row)
-            NSUserDefaults.standardUserDefaults().setObject(done, forKey: "done")
-            todolist.removeAtIndex(indexPath.row)
-            tableView.reloadData()
+            } else {
+                tableView.reloadData()
+                print("touch")
+            }
         }
-        return[archiveAction]
+            return[archiveAction]
     }
     
 
